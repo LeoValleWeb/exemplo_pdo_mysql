@@ -1,12 +1,13 @@
 <?php
 
 require_once './vendor/autoload.php';
-use PDO;
+use ExemploPDOMySQL\MySQLConnection;
 
-$bd = new POO('mysql:host=localhost; dbname-biblioteca', 'root', '');
+$bd = new MySQLConnection();
 
 $comando - $bd->prepare('SELECT * FROM generos');
 $conando->execute();
+
 $generos = $comando->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
