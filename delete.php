@@ -18,18 +18,11 @@ $genero = $comando->fetch(PDO::FETCH_ASSOC);
     
     header('Location: /index.php');  
 }
-
+$_title = 'Remover Gênero';
 ?>
 
-<!DOCTYPE html>
-    <html lang="pt-br">
-    <head>
-        <meta charset="utf-8"> 
-        <title>Remover Gênero</title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    </head>
-    <body>
-      <main class="container">
+<?php include('./includes/header.php') ?>
+
         <h1>Remover Gênero</h1>
         <p>Tem certeza que deseja remover o gênero "<?= $genero['nome'] ?>" 
         <form action="delete.php" method="post">
@@ -37,6 +30,5 @@ $genero = $comando->fetch(PDO::FETCH_ASSOC);
             <a class="btn btn-secondary" href="index.php">voltar</a>
             <button class="btn btn-danger" type="submit">Excluir</button>
         </form>
-      </main>
-    </body>
-</html>
+
+        <?php include('./includes/footer.php') ?>
