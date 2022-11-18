@@ -1,15 +1,15 @@
 <?php
 require_once './vendor/autoload.php';
 
-use ExemploPDOMYSQL\MySQLConnection;
+use ExemploPDOMySQL\MySQLConnection;
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $bd = new MySQLConnection();
 
-$comando = $bd->prepare('INSERT INTO generos (nome) VALUES (: nome)');
-$comando->execute([': nome' => $_POST['nome']]);
+    $comando = $bd->prepare('INSERT INTO generos (nome) VALUES (:nome)');
+    $comando->execute([':nome' => $_POST['nome']]);
 
-header('Location:/index.php');
+    header('Location:/index.php');
 
 }
 $_title = 'Novo Gênero';

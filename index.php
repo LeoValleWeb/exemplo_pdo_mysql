@@ -5,8 +5,8 @@ use ExemploPDOMySQL\MySQLConnection;
 
 $bd = new MySQLConnection();
 
-$comando - $bd->prepare('SELECT * FROM generos');
-$conando->execute();
+$comando = $bd->prepare('SELECT * FROM generos');
+$comando->execute();
 
 $generos = $comando->fetchAll(PDO::FETCH_ASSOC);
 
@@ -26,10 +26,10 @@ $_title = 'Gêneros';
         <?php foreach($generos as $g): ?>
             <tr>
                 <td><?= $g['id'] ?></td>
-                <td><?= $g['name'] ?></td>
+                <td><?= $g['nome'] ?></td>
                 <td>
-                    <a class="bnt bnt-secondary" href="update.php?id=<?= $g['id'] ?>">Editar</a>
-                    <a class="bnt btn-danger" href="delete.php?id=<?= $g['id'] ?>">Excluir"</a>
+                    <a class="btn btn-secondary" href="update.php?id=<?= $g['id'] ?>">Editar</a>
+                    <a class="btn btn-danger" href="delete.php?id=<?= $g['id'] ?>">Excluir</a>
                 </td>
             <tr>
             <?php endforeach ?>
