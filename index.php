@@ -32,9 +32,10 @@ $generos = $comando->fetchAll(PDO::FETCH_ASSOC);
                 <td><?= $g['name'] ?></td>
                 <td>
                     <a href="update.php?id=<?= $g['id'] ?>">Editar</a>
+                    <a href="delete.php?id=<?= $g['id'] ?>">Excluir"</a>
                 </td>
             <tr>
-        <?php endforeach ?>
-    </table>
-  </body>
+            <?php endforeach ?>
+        </table>
+    </body>
 </html>
